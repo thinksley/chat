@@ -7,6 +7,14 @@ chatApp.config(['$routeProvider',
                 templateUrl: 'pages/room.html',
                 controller: 'RoomCtrl'
             }).
+            when('/reg', {
+                templateUrl: 'pages/reg.html',
+                controller: 'RegCtrl'
+            }).
+            when('/login', {
+                templateUrl: 'pages/login.html',
+                controller: 'LoginCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

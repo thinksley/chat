@@ -1,6 +1,6 @@
 angular.module('chat').
 controller('RoomCtrl',function($scope,socket){
-        alert('room controller')
+
         $scope.messages=[];
         $scope.createMessage=function(){
             if($scope.newMessage){
