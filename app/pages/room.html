@@ -1,8 +1,8 @@
-<div class="panel panel-default col-md-9">
+<div class="panel panel-default col-md-9" ng-controller="RoomCtrl">
     <div class="panel-heading">欢迎光临聊天室</div>
     <div class="panel-body">
-        <div class="list-group"  style="height:300px;overflow-y: auto" >
-            <div class="list-group-item" ng-repeat="message in messages">
+        <div class="list-group" auto_scroll_to_bottom  style="height:300px;overflow-y: auto" >
+            <div class="list-group-item" ng-repeat="message in messages ">
                 匿名：{{message}}</span>
             </div>
         </div>
