@@ -1,10 +1,14 @@
 angular.module('chat').
-controller('RoomCtrl',function($scope,socket){
+controller('RoomCtrl',function($scope,$rootScope,socket){
 
         $scope.messages=[];
         $scope.createMessage=function(){
             if($scope.newMessage){
-                socket.emit('createMessage',$scope.newMessage);
+                socket.emit('createMessage',{
+                    content:$scope.newMessage,
+                    creator:$rootScope.user,
+                    creatAt:new Date()
+                });
                 $scope.newMessage='';
             }
 

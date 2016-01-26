@@ -1,4 +1,4 @@
-var chatApp =angular.module('chat',['ngRoute']);
+var chatApp =angular.module('chat',['ngRoute','angularMoment']);
 
 chatApp.config(['$routeProvider',
     function($routeProvider) {
@@ -20,7 +20,8 @@ chatApp.config(['$routeProvider',
             });
     }]);
 
-angular.module('chat').run(function($rootScope,$location,validator){
+angular.module('chat').run(function($rootScope,$location,validator,amMoment){
+    amMoment.changeLocale('zh-cn');
     validator.success(function(data){
 
         if(data['code']==1){

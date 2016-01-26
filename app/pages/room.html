@@ -3,7 +3,7 @@
     <div class="panel-body">
         <div class="list-group" auto_scroll_to_bottom  style="height:300px;overflow-y: auto" >
             <div class="list-group-item" ng-repeat="message in messages track by $index">
-                匿名：{{message}}</span>
+                {{message.creator.username}} 说 : {{message.content}} <span class="text-right"><time am-time-ago="message.creatAt"></time></span>
             </div>
         </div>
     </div>
