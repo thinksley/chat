@@ -19,3 +19,17 @@ chatApp.config(['$routeProvider',
                 redirectTo: '/'
             });
     }]);
+
+angular.module('chat').run(function($rootScope,$location,validator){
+    validator.success(function(data){
+
+        if(data['code']==1){
+            $rootScope.user=data['user'];
+            $location.path('/');
+        }else{
+            $location.path('/login')
+        }
+    }).error(function(data){
+        $location.path('/login')
+    })
+})

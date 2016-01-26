@@ -30,3 +30,19 @@ exports.login = function(req,res){
         }
     });
 }
+
+exports.logout = function(req,res){
+    req.session.user=null;
+    return res.send({code:1,msg:'退出成功'})
+}
+
+exports.validate = function(req,res){
+    if(req.session.user){
+        return res.send({code:1,user:req.session.user})
+    }else{
+        return res.send({code:0,msg:'未登陆'})
+    }
+
+}
+
+

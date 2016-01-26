@@ -19,6 +19,8 @@ app.use(session({
 
 app.post('/users/reg',user.reg);
 app.post('/users/login',user.login);
+app.get('/users/logout',user.logout);
+app.get('/users/validate',user.validate);
 var server =app.listen(8080);
 var io=require('socket.io').listen(server);
 
