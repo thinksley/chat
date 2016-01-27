@@ -2,7 +2,7 @@
     <div class="panel-heading">欢迎光临聊天室</div>
     <div class="panel-body">
         <div class="list-group" auto_scroll_to_bottom  style="height:300px;overflow-y: auto" >
-            <div class="list-group-item" ng-repeat="message in messages track by $index">
+            <div class="list-group-item" ng-repeat="message in room.messages track by $index">
                 {{message.creator.username}} 说 : {{message.content}} <span class="text-right"><time am-time-ago="message.creatAt"></time></span>
             </div>
         </div>
@@ -13,5 +13,16 @@
                 <textarea class="form-control" ng-model="newMessage" ctrl-enter-break-line="createMessage()"></textarea>
             </div>
         </form>
+    </div>
+</div>
+
+<div class="panel panel-default col-md-3">
+    <div class="panel-heading">在线聊天</div>
+    <div class="panel-body">
+        <div class="list-group" auto_scroll_to_bottom style="height:300px;overflow-y: auto" >
+            <div class="list-group-item" ng-repeat="user in room.users track by $index">
+                {{user.username}}
+            </div>
+        </div>
     </div>
 </div>
